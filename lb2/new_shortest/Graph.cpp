@@ -5,7 +5,7 @@
 #include <fstream>
 #include "Graph.h"
 
-
+Graph::~Graph()= default;
 Graph::Graph(bool directed){
     this->directed = directed;
     for(int i = 1; i < (MAXV + 1); i ++){
@@ -13,13 +13,13 @@ Graph::Graph(bool directed){
     }
 }
 
-EdgeNode::EdgeNode(int key, int weight){
+
+Graph::EdgeNode::EdgeNode(int key, int weight){
     this->key = key;
     this->weight = weight;
     this->next = nullptr;
 }
 
-Graph::~Graph()= default;
 
 void Graph::insert_edge(int x, int y, int weight, bool directed){
     if(x > 0 && x < (MAXV + 1) && y > 0 && y < (MAXV + 1)){
@@ -32,62 +32,49 @@ void Graph::insert_edge(int x, int y, int weight, bool directed){
     }
 }
 
-void Graph::print(){
-    for(int v = 1; v < (MAXV + 1); v++){
-        if(this->edges[v] != nullptr){
-            cout << "Vertex " << v << " has neighbors: " << endl;
-            EdgeNode *curr = this->edges[v];
-            while(curr != nullptr){
-                cout << curr->key << endl;
-                curr = curr->next;
-            }
-        }
-    }
-}
 
-void init_vars(bool discovered[], int distance[], int parent[]){
+void init_vars(bool visited[], int distance[]){
     for(int i = 1; i < (MAXV + 1); i ++){
-        discovered[i] = false;
+        visited[i] = false;
         distance[i] = std::numeric_limits<int>::max();
-        parent[i] = -1;
     }
 }
 
-void dijkstra_shortest_path(Graph *g, int parent[], int distance[], int start){
 
-    bool discovered[MAXV + 1];
-    EdgeNode *curr;
+void Graph::dijkstra_shortest_path(){
+
+    bool visited[MAXV + 1];
+    EdgeNode *current;
     int v_curr;
     int v_neighbor;
     int weight;
     int smallest_dist;
 
-    init_vars(discovered, distance, parent);
+    init_vars(visited, distance);
 
-    distance[start] = 0;
-    v_curr = start;
+    distance[1] = 0;
+    v_curr = 1;
 
-    while(!discovered[v_curr]){
 
-        discovered[v_curr] = true;
-        curr = g->edges[v_curr];
+    while(!visited[v_curr]){
 
-        while(curr != nullptr){
+        visited[v_curr] = true;
+        current = this->edges[v_curr];
 
-            v_neighbor = curr->key;
-            weight = curr->weight;
+        while(current != nullptr){
+
+            v_neighbor = current->key;
+            weight = current->weight;
 
             if((distance[v_curr] + weight) < distance[v_neighbor]){
                 distance[v_neighbor] = distance[v_curr] + weight;
-                parent[v_neighbor] = v_curr;
             }
-            curr = curr->next;
+            current = current->next;
         }
 
-        //set the next current vertex to the vertex with the smallest distance
         smallest_dist = std::numeric_limits<int>::max();
         for(int i = 1; i < (MAXV + 1); i++){
-            if(!discovered[i] && (distance[i] < smallest_dist)){
+            if(!visited[i] && (distance[i] < smallest_dist)){
                 v_curr = i;
                 smallest_dist = distance[i];
             }
@@ -96,15 +83,35 @@ void dijkstra_shortest_path(Graph *g, int parent[], int distance[], int start){
 }
 
 
-void print_distances(int start, int distance[], int counter){
+void Graph::print_distances(int test_number){
     ofstream file;
-    string out_path = "../Tests/program_output/out." + to_string(counter);
+    string out_path = "../Tests/program_output/out." + to_string(test_number);
     file.open(out_path);
     for(int i = 1; i < (MAXV + 1); i ++){
         if(distance[i] != std::numeric_limits<int>::max()){
-//            cout << "Shortest distance from " << start << " to " << i << " is: " << distance[i] << endl;
             file << distance[i] << " ";
         }
+    }
+    file.close();
+}
+
+
+void Graph::read(int test_number) {
+    string in_path = "../Tests/input/in." + to_string(test_number);
+    ifstream file(in_path);
+    if (file.is_open()) {
+        int temp;
+        int x, y, m;
+
+        file >> temp >> temp;
+
+        while (!file.eof()) {
+            file >> x >> y >> m;
+            this->insert_edge(x, y, m, false);
+        }
+    }
+    else {
+        cout << "input test not founded." << endl;
     }
     file.close();
 }

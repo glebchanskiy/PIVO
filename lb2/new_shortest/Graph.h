@@ -14,29 +14,28 @@
 
 using namespace std;
 
-
-class EdgeNode{
-public:
-    int key;
-    int weight;
-    EdgeNode *next;
-    EdgeNode(int, int);
-};
-
-
-
 class Graph{
     bool directed;
+
 public:
+    class EdgeNode{
+    public:
+        int key;
+        int weight;
+        EdgeNode *next;
+        EdgeNode(int, int);
+    };
+
     EdgeNode *edges[MAXV + 1];
+    int distance[MAXV + 1];
     Graph(bool);
     ~Graph();
+    void read(int test_number);
     void insert_edge(int, int, int, bool);
-    void print();
+    void dijkstra_shortest_path();
+    void print_distances(int test_number);
 };
 
-void dijkstra_shortest_path(Graph *g, int parent[], int distance[], int start);
 
-void print_distances(int start, int distance[], int counter);
 
 #endif //NEW_SHORTEST_GRAPH_H
