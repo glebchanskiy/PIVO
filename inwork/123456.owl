@@ -1,0 +1,320 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/glebchanskiy/ontologies/2022/3/untitled-ontology-9#"
+     xml:base="http://www.semanticweb.org/glebchanskiy/ontologies/2022/3/untitled-ontology-9"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:untitled-ontology-9="http://www.semanticweb.org/glebchanskiy/ontologies/2022/3/untitled-ontology-9#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/glebchanskiy/ontologies/2022/3/untitled-ontology-9"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/glebchanskiy/ontologies/2022/3/untitled-ontology-9#Наивысшая_точка -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/glebchanskiy/ontologies/2022/3/untitled-ontology-9#Наивысшая_точка">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/glebchanskiy/ontologies/2022/3/untitled-ontology-9#Форма_рельефа"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/glebchanskiy/ontologies/2022/3/untitled-ontology-9#Cтрана"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/glebchanskiy/ontologies/2022/3/untitled-ontology-9#Находится_недалеко -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/glebchanskiy/ontologies/2022/3/untitled-ontology-9#Находится_недалеко">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/glebchanskiy/ontologies/2022/3/untitled-ontology-9#Деревня"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/glebchanskiy/ontologies/2022/3/untitled-ontology-9#Город"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/glebchanskiy/ontologies/2022/3/untitled-ontology-9#Находиться_на_территории -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/glebchanskiy/ontologies/2022/3/untitled-ontology-9#Находиться_на_территории">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/glebchanskiy/ontologies/2022/3/untitled-ontology-9#Cтрана"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/glebchanskiy/ontologies/2022/3/untitled-ontology-9#Форма_рельефа"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/glebchanskiy/ontologies/2022/3/untitled-ontology-9#Форма_рельефа"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/glebchanskiy/ontologies/2022/3/untitled-ontology-9#иметь_сталицу -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/glebchanskiy/ontologies/2022/3/untitled-ontology-9#иметь_сталицу"/>
+    
+
+
+    <!-- http://www.semanticweb.org/glebchanskiy/ontologies/2022/3/untitled-ontology-9#ссылается_на -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/glebchanskiy/ontologies/2022/3/untitled-ontology-9#ссылается_на">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/glebchanskiy/ontologies/2022/3/untitled-ontology-9#Растояние"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/glebchanskiy/ontologies/2022/3/untitled-ontology-9#Город"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/glebchanskiy/ontologies/2022/3/untitled-ontology-9#высота_над_уровнем_моря -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/glebchanskiy/ontologies/2022/3/untitled-ontology-9#высота_над_уровнем_моря">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/glebchanskiy/ontologies/2022/3/untitled-ontology-9#Форма_рельефа"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/glebchanskiy/ontologies/2022/3/untitled-ontology-9#год_переименования -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/glebchanskiy/ontologies/2022/3/untitled-ontology-9#год_переименования">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/glebchanskiy/ontologies/2022/3/untitled-ontology-9#Монумент"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/glebchanskiy/ontologies/2022/3/untitled-ontology-9#год_установки -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/glebchanskiy/ontologies/2022/3/untitled-ontology-9#год_установки">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/glebchanskiy/ontologies/2022/3/untitled-ontology-9#Монумент"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/glebchanskiy/ontologies/2022/3/untitled-ontology-9#измерение_в_километрах -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/glebchanskiy/ontologies/2022/3/untitled-ontology-9#измерение_в_километрах">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/glebchanskiy/ontologies/2022/3/untitled-ontology-9#Растояние"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/glebchanskiy/ontologies/2022/3/untitled-ontology-9#измерение_в_метрах -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/glebchanskiy/ontologies/2022/3/untitled-ontology-9#измерение_в_метрах">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/glebchanskiy/ontologies/2022/3/untitled-ontology-9#Высота"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/glebchanskiy/ontologies/2022/3/untitled-ontology-9#прошлое_название -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/glebchanskiy/ontologies/2022/3/untitled-ontology-9#прошлое_название">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/glebchanskiy/ontologies/2022/3/untitled-ontology-9#Монумент"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/glebchanskiy/ontologies/2022/3/untitled-ontology-9#содержит_надпись -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/glebchanskiy/ontologies/2022/3/untitled-ontology-9#содержит_надпись">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/glebchanskiy/ontologies/2022/3/untitled-ontology-9#Монумент"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/glebchanskiy/ontologies/2022/3/untitled-ontology-9#текущее_название -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/glebchanskiy/ontologies/2022/3/untitled-ontology-9#текущее_название">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/glebchanskiy/ontologies/2022/3/untitled-ontology-9#Монумент"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/glebchanskiy/ontologies/2022/3/untitled-ontology-9#Cтрана -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/glebchanskiy/ontologies/2022/3/untitled-ontology-9#Cтрана"/>
+    
+
+
+    <!-- http://www.semanticweb.org/glebchanskiy/ontologies/2022/3/untitled-ontology-9#Высота -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/glebchanskiy/ontologies/2022/3/untitled-ontology-9#Высота"/>
+    
+
+
+    <!-- http://www.semanticweb.org/glebchanskiy/ontologies/2022/3/untitled-ontology-9#Город -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/glebchanskiy/ontologies/2022/3/untitled-ontology-9#Город"/>
+    
+
+
+    <!-- http://www.semanticweb.org/glebchanskiy/ontologies/2022/3/untitled-ontology-9#Деревня -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/glebchanskiy/ontologies/2022/3/untitled-ontology-9#Деревня"/>
+    
+
+
+    <!-- http://www.semanticweb.org/glebchanskiy/ontologies/2022/3/untitled-ontology-9#Монумент -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/glebchanskiy/ontologies/2022/3/untitled-ontology-9#Монумент"/>
+    
+
+
+    <!-- http://www.semanticweb.org/glebchanskiy/ontologies/2022/3/untitled-ontology-9#Растояние -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/glebchanskiy/ontologies/2022/3/untitled-ontology-9#Растояние"/>
+    
+
+
+    <!-- http://www.semanticweb.org/glebchanskiy/ontologies/2022/3/untitled-ontology-9#Форма_рельефа -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/glebchanskiy/ontologies/2022/3/untitled-ontology-9#Форма_рельефа"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/glebchanskiy/ontologies/2022/3/untitled-ontology-9#Беларусь -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/glebchanskiy/ontologies/2022/3/untitled-ontology-9#Беларусь">
+        <rdf:type rdf:resource="http://www.semanticweb.org/glebchanskiy/ontologies/2022/3/untitled-ontology-9#Cтрана"/>
+        <иметь_сталицу rdf:resource="http://www.semanticweb.org/glebchanskiy/ontologies/2022/3/untitled-ontology-9#Минск"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/glebchanskiy/ontologies/2022/3/untitled-ontology-9#Белорусская_гряда -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/glebchanskiy/ontologies/2022/3/untitled-ontology-9#Белорусская_гряда">
+        <rdf:type rdf:resource="http://www.semanticweb.org/glebchanskiy/ontologies/2022/3/untitled-ontology-9#Форма_рельефа"/>
+        <Находиться_на_территории rdf:resource="http://www.semanticweb.org/glebchanskiy/ontologies/2022/3/untitled-ontology-9#Беларусь"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/glebchanskiy/ontologies/2022/3/untitled-ontology-9#Гранитная_плита -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/glebchanskiy/ontologies/2022/3/untitled-ontology-9#Гранитная_плита">
+        <rdf:type rdf:resource="http://www.semanticweb.org/glebchanskiy/ontologies/2022/3/untitled-ontology-9#Монумент"/>
+        <год_установки rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1995-2000 гг.</год_установки>
+        <содержит_надпись rdf:datatype="http://www.w3.org/2001/XMLSchema#string">«Гора Дзержинская. Высшая точка Белоруссии. Высота 345 метровнад уровнем моря»</содержит_надпись>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/glebchanskiy/ontologies/2022/3/untitled-ontology-9#Держинск -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/glebchanskiy/ontologies/2022/3/untitled-ontology-9#Держинск">
+        <rdf:type rdf:resource="http://www.semanticweb.org/glebchanskiy/ontologies/2022/3/untitled-ontology-9#Город"/>
+        <Находится_недалеко rdf:resource="http://www.semanticweb.org/glebchanskiy/ontologies/2022/3/untitled-ontology-9#гора_Держинская"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/glebchanskiy/ontologies/2022/3/untitled-ontology-9#Минск -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/glebchanskiy/ontologies/2022/3/untitled-ontology-9#Минск">
+        <rdf:type rdf:resource="http://www.semanticweb.org/glebchanskiy/ontologies/2022/3/untitled-ontology-9#Город"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/glebchanskiy/ontologies/2022/3/untitled-ontology-9#Минская_возвышенность -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/glebchanskiy/ontologies/2022/3/untitled-ontology-9#Минская_возвышенность">
+        <rdf:type rdf:resource="http://www.semanticweb.org/glebchanskiy/ontologies/2022/3/untitled-ontology-9#Форма_рельефа"/>
+        <Находиться_на_территории rdf:resource="http://www.semanticweb.org/glebchanskiy/ontologies/2022/3/untitled-ontology-9#Белорусская_гряда"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/glebchanskiy/ontologies/2022/3/untitled-ontology-9#Скиртаново -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/glebchanskiy/ontologies/2022/3/untitled-ontology-9#Скиртаново">
+        <rdf:type rdf:resource="http://www.semanticweb.org/glebchanskiy/ontologies/2022/3/untitled-ontology-9#Деревня"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/glebchanskiy/ontologies/2022/3/untitled-ontology-9#высота_г_Держинской -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/glebchanskiy/ontologies/2022/3/untitled-ontology-9#высота_г_Держинской">
+        <rdf:type rdf:resource="http://www.semanticweb.org/glebchanskiy/ontologies/2022/3/untitled-ontology-9#Высота"/>
+        <ссылается_на rdf:resource="http://www.semanticweb.org/glebchanskiy/ontologies/2022/3/untitled-ontology-9#гора_Держинская"/>
+        <измерение_в_метрах rdf:datatype="http://www.w3.org/2001/XMLSchema#int">345</измерение_в_метрах>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/glebchanskiy/ontologies/2022/3/untitled-ontology-9#гора_Держинская -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/glebchanskiy/ontologies/2022/3/untitled-ontology-9#гора_Держинская">
+        <rdf:type rdf:resource="http://www.semanticweb.org/glebchanskiy/ontologies/2022/3/untitled-ontology-9#Форма_рельефа"/>
+        <Наивысшая_точка rdf:resource="http://www.semanticweb.org/glebchanskiy/ontologies/2022/3/untitled-ontology-9#Беларусь"/>
+        <Находится_недалеко rdf:resource="http://www.semanticweb.org/glebchanskiy/ontologies/2022/3/untitled-ontology-9#Держинск"/>
+        <Находиться_на_территории rdf:resource="http://www.semanticweb.org/glebchanskiy/ontologies/2022/3/untitled-ontology-9#Минская_возвышенность"/>
+        <Находиться_на_территории rdf:resource="http://www.semanticweb.org/glebchanskiy/ontologies/2022/3/untitled-ontology-9#Скиртаново"/>
+        <год_переименования rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1958</год_переименования>
+        <прошлое_название rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Святая гора</прошлое_название>
+        <текущее_название rdf:datatype="http://www.w3.org/2001/XMLSchema#string">гора Держинская</текущее_название>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/glebchanskiy/ontologies/2022/3/untitled-ontology-9#растояние_между_минском_и_держинском -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/glebchanskiy/ontologies/2022/3/untitled-ontology-9#растояние_между_минском_и_держинском">
+        <rdf:type rdf:resource="http://www.semanticweb.org/glebchanskiy/ontologies/2022/3/untitled-ontology-9#Растояние"/>
+        <ссылается_на rdf:resource="http://www.semanticweb.org/glebchanskiy/ontologies/2022/3/untitled-ontology-9#Держинск"/>
+        <ссылается_на rdf:resource="http://www.semanticweb.org/glebchanskiy/ontologies/2022/3/untitled-ontology-9#Минск"/>
+        <измерение_в_километрах rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">30</измерение_в_километрах>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
