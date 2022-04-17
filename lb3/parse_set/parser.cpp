@@ -13,7 +13,7 @@ Parser::Parser(string &path) {
 
         while (getline(file, buff)) {
             set_counter++;
-            if (set_counter>2)
+            if (set_counter>10)
                 return;
 
             char flag = 'n';    // флаг для записи в поле "name"
@@ -31,15 +31,11 @@ Parser::Parser(string &path) {
                 }
             }
 
-            if (set_counter == 1) {
-                // парсим первое множество из строки
-                parsedSet_1 = pars(set_in_line);
-                parsedSet_1.setSetName(name);
-            } else if (set_counter == 2) {
-                // парсим второе множество из строки
-                parsedSet_2 = pars(set_in_line);
-                parsedSet_2.setSetName(name);
-            }
+
+            Set temp = pars(set_in_line);
+            temp.setSetName(name);
+            parsedSets.push_back(temp);
+
             isParsed = true;
         }
     }
@@ -143,17 +139,6 @@ Set Parser::pars(string &set_in_line) {
     return *temp1;
 }
 
-
-
-Set Parser::getFirstParsedSet() {
-    //// возвращает множество в формате Set (из первой строки)
-    return isParsed ? parsedSet_1 : *(new Set());
-}
-
-Set Parser::getSecondParsedSet() {
-    //// возвращает множество в формате Set (из второй строки)
-    return isParsed ? parsedSet_2 : *(new Set());
-}
 
 bool Parser::isParsedSuccessfully() const {
     return isParsed;

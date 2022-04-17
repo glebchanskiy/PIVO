@@ -11,3 +11,6 @@
 1	435	1650137390602391208	CMakeFiles/new_shortest.dir/main.cpp.o	a26c2257ca27d44d
 1	476	1650137390643364571	CMakeFiles/new_shortest.dir/Graph.cpp.o	5672f70dd6ed48f
 477	553	1650137390717249881	new_shortest	1f4c8f3a9c8c813
+3	505	1650148332270019656	CMakeFiles/new_shortest.dir/Graph.cpp.o	5672f70dd6ed48f
+1	509	1650148332276085361	CMakeFiles/new_shortest.dir/main.cpp.o	a26c2257ca27d44d
+509	566	1650148332335917395	new_shortest	1f4c8f3a9c8c813

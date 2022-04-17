@@ -20,16 +20,12 @@ class Parser {
 private:
     bool isParsed = false;
 
-    Set parsedSet_1; // хранит множество из первой строки файла
-    Set parsedSet_2; // из второй
-
     Set pars(string& line);
 
 public:
     explicit Parser(string& path);
     bool isParsedSuccessfully() const;
-    Set getFirstParsedSet();
-    Set getSecondParsedSet();
+    vector<Set> parsedSets;
 };
 
 

@@ -100,14 +100,13 @@ void Graph::read(int test_number) {
     string in_path = "../Tests/input/in." + to_string(test_number);
     ifstream file(in_path);
     if (file.is_open()) {
-        int temp;
-        int x, y, m;
+        int x, y, weight;
 
-        file >> temp >> temp;
+        file >> weight >> weight;
 
         while (!file.eof()) {
-            file >> x >> y >> m;
-            this->insert_edge(x, y, m, false);
+            file >> x >> y >> weight;
+            this->insert_edge(x, y, weight, false);
         }
     }
     else {

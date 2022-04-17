@@ -11,7 +11,7 @@ int main() {
     clock_t oneTestTime;
     oneTestTime = clock();
 
-    Set a, b;
+    Set a, b, a1, a2;
 
     a.pprint();
 
@@ -19,11 +19,18 @@ int main() {
     Parser pars(path);
 
     if (pars.isParsedSuccessfully()) {
-        a = pars.getFirstParsedSet();
-        b = pars.getSecondParsedSet();
 
-        a.pprint();
-        b.pprint();
+        for (auto i : pars.parsedSets) {
+            i.pprint();
+        }
+
+        a = pars.parsedSets[0];
+        b = pars.parsedSets[1];
+
+        a1 = pars.parsedSets[2];
+        a2 = pars.parsedSets[3];
+
+
 
         cout << endl << endl;
 
@@ -38,6 +45,12 @@ int main() {
         Set result;
         result.unite(s1,s2);
         result.pprint();
+
+        cout << endl;
+
+        Set result2;
+        result2.difference(a2,a1);
+        result2.pprint();
     }
 
 

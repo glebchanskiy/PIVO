@@ -28,7 +28,7 @@ public:
 
     EdgeNode *edges[MAXV + 1];
     int distance[MAXV + 1];
-    Graph(bool);
+    explicit Graph(bool);
     ~Graph();
     void read(int test_number);
     void insert_edge(int, int, int, bool);
