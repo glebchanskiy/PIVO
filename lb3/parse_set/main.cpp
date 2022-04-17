@@ -54,39 +54,35 @@ int main() {
     }
 
 
+    cout << endl;
+
+    Set j;
+    j.setSetName("J");
+
+    Set j_;
+    string i="I";
+    j_.push_back(i);
+    j_.push_back(*(new Set()));
+
+    string aa="A";
+    j_.push_back(aa);
+    j.push_back(j_);
+
+    j.pprint();
+
+    Set j2(j);
+    j2.setSetName("J2");
+    j2.pprint();
+
+
+    Set temp;
+    temp.difference(j2,j);
+    temp.pprint();
+
 
 
     cout << endl <<"[" << (double)(clock() - oneTestTime) / (double) CLOCKS_PER_SEC << "]" << endl;
 
-//// при сравнении " {{}, A, I, } " c " {{}, A, I, } " возвращает false;
+
     return 0;
 }
-
-
-
-//    Set s(10);
-//    cout << s.main_container.capacity() << endl;
-//
-//    s.push_back(1);
-//    s.push_back(2);
-//    s.push_back(3);
-//
-//    Set t;
-//    t.push_back(2);
-//    t.push_back(3);
-//
-//    Set it;
-//    it.push_back('a');
-//    string stroka = "lol_kek";
-//    it.push_back(stroka);
-//    it.push_back('c');
-//    it.push_back(it);
-//
-//    t.push_back(4);
-//
-//    s.push_back(t);
-//
-//    s.push_back('a');
-//    s.push_back('b');
-//
-//    s.print(); cout<<endl;

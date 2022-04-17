@@ -22,6 +22,7 @@ public:
         explicit SetElement(char);
         explicit SetElement(Set&);
         explicit SetElement(std::string);
+        SetElement()=default;
     };
 
 

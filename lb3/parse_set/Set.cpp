@@ -109,17 +109,16 @@ std::string Set::getSetName() {
 
 
 void Set::sort(Set &set) {
-    std::string temp;
+    SetElement temp;
     if (set.main_container.empty())
         return;
     for (int i = 0; i < set.main_container.size() - 1; i++) {
         for (int j = 0; j < set.main_container.size() - i - 1; j++) {
             if (set.main_container[j].str_part > set.main_container[j + 1].str_part) {
-                // меняем элементы местами
 
-                temp = set.main_container[j].str_part;
-                set.main_container[j].str_part = set.main_container[j + 1].str_part;
-                set.main_container[j + 1].str_part = temp;
+                temp = set.main_container[j];
+                set.main_container[j] = set.main_container[j + 1];
+                set.main_container[j + 1] = temp;
             }
         }
     }
