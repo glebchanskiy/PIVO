@@ -49,7 +49,7 @@ int main() {
         cout << endl;
 
         Set result2;
-        result2.difference(a2,a1);
+        result2.difference(a1,a2);
         result2.pprint();
     }
 
