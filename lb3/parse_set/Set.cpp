@@ -17,6 +17,7 @@ Set::Set(Set *s) {
     // конструктор копирования
     this->main_container = s->main_container;
     this->SetName = s->SetName;
+    this->setIsDirected = s->setIsDirected;
 }
 
 
@@ -58,15 +59,15 @@ void Set::push_back(Set::SetElement &element) {
 }
 
 
-void Set::print() {
-    std::cout << "{";
+void Set::print_dir() {
+    std::cout << "<";
     for (auto i : main_container) {
         if (i.next != nullptr) {
-            i.next->print();
-            std::cout << ", ";
+            if (this->setIsDirected)
+                i.next->print_dir();
+            else
+                i.next->print();
         }
-
-
         if (not i.str_part.empty()) {
             if (elementIsEqual(i, main_container.back()))
                 std::cout << "" << i.str_part << "";
@@ -86,7 +87,44 @@ void Set::print() {
                 std::cout << "" << i.int_part << ", ";
         }
     }
-    std::cout << "}";
+    std::cout << ">, ";
+}
+
+
+void Set::print() {
+    std::cout << "{";
+
+    for (auto i : main_container) {
+        if (i.next != nullptr) {
+            if (i.next->setIsDirected) {
+                i.next->print_dir();
+            }
+            else {
+                i.next->print();
+            }
+
+
+        }
+        if (not i.str_part.empty()) {
+            if (elementIsEqual(i, main_container.back()))
+                std::cout << "" << i.str_part << "";
+            else
+                std::cout << "" << i.str_part << ", ";
+        }
+        else if (i.char_part!=' ') {
+            if (elementIsEqual(i, main_container.back()))
+                std::cout << "" << i.char_part << "";
+            else
+                std::cout << "" << i.char_part << ", ";
+        }
+        else if (i.int_part!='0') {
+            if (elementIsEqual(i, main_container.back()))
+                std::cout << "" << i.int_part << "";
+            else
+                std::cout << "" << i.int_part << ", ";
+        }
+    }
+    std::cout << "}, ";
 }
 
 void Set::clear() {
@@ -151,7 +189,7 @@ bool Set::elementIsEqual(Set::SetElement &first_set,Set::SetElement &second_set)
          !second_set.str_part.empty()) ) {
         return true;
     }
-    else if ( first_set.next != nullptr and second_set.next != nullptr) {
+    else if ( first_set.next != nullptr and second_set.next != nullptr and (first_set.next->setIsDirected and second_set.next->setIsDirected)) {
         return setIsEqual(*first_set.next, *second_set.next);
     }
     else

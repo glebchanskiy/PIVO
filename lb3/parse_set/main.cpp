@@ -35,7 +35,7 @@ int main() {
         cout << endl << endl;
 
         Set s1;
-        s1.unite(a,b);
+        s1.difference(a,b);
         s1.pprint();
 
         Set s2;

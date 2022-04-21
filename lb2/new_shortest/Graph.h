@@ -23,13 +23,16 @@ public:
         int key;
         int weight;
         EdgeNode *next;
+
         EdgeNode(int, int);
     };
 
     EdgeNode *edges[MAXV + 1];
     int distance[MAXV + 1];
+
     explicit Graph(bool);
     ~Graph();
+
     void read(int test_number);
     void insert_edge(int, int, int, bool);
     void dijkstra_shortest_path();

@@ -24,7 +24,7 @@ public:
         explicit SetElement(std::string);
         SetElement()=default;
     };
-
+    bool setIsDirected=false;
 
 
     Set();
@@ -55,6 +55,7 @@ private:
     bool elementIsEqual(Set::SetElement &first_set,Set::SetElement &second_set);
 
     void print();
+    void print_dir();
     std::string SetName="UNKNOWN";
     std::vector<Set::SetElement> main_container;
 };
