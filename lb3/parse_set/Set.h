@@ -14,12 +14,9 @@ class Set {
 public:
     class SetElement {
     public:
-        int int_part = '0';
-        char char_part = ' ';
         std::string str_part;
         Set * next = nullptr;
-        explicit SetElement(int);
-        explicit SetElement(char);
+
         explicit SetElement(Set&);
         explicit SetElement(std::string);
         SetElement()=default;
@@ -36,8 +33,6 @@ public:
     std::string getSetName();
 
 
-    void push_back(int element);
-    void push_back(char element);
     void push_back(std::string &element);
     void push_back(Set& element);
     void push_back(Set::SetElement &element);

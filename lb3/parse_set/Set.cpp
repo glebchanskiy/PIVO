@@ -21,14 +21,6 @@ Set::Set(Set *s) {
 }
 
 
-Set::SetElement::SetElement(int data) {
-    this->int_part = data;
-}
-
-Set::SetElement::SetElement(char data) {
-    this->char_part = data;
-}
-
 Set::SetElement::SetElement(Set& data) {
     this->next = &data;
 }
@@ -37,14 +29,6 @@ Set::SetElement::SetElement(std::string data) {
     this->str_part = data;
 }
 
-
-void Set::push_back(int element) {
-    this->main_container.emplace_back(Set::SetElement(element));
-}
-
-void Set::push_back(char element) {
-    this->main_container.emplace_back(Set::SetElement(element));
-}
 
 void Set::push_back(std::string &element) {
     this->main_container.emplace_back(Set::SetElement(element));
@@ -61,6 +45,7 @@ void Set::push_back(Set::SetElement &element) {
 
 void Set::print_dir() {
     std::cout << "<";
+
     for (auto i : main_container) {
         if (i.next != nullptr) {
             if (this->setIsDirected)
@@ -74,19 +59,8 @@ void Set::print_dir() {
             else
                 std::cout << "" << i.str_part << ", ";
         }
-        else if (i.char_part!=' ') {
-            if (elementIsEqual(i, main_container.back()))
-                std::cout << "" << i.char_part << "";
-            else
-                std::cout << "" << i.char_part << ", ";
-        }
-        else if (i.int_part!='0') {
-            if (elementIsEqual(i, main_container.back()))
-                std::cout << "" << i.int_part << "";
-            else
-                std::cout << "" << i.int_part << ", ";
-        }
     }
+
     std::cout << ">, ";
 }
 
@@ -96,14 +70,10 @@ void Set::print() {
 
     for (auto i : main_container) {
         if (i.next != nullptr) {
-            if (i.next->setIsDirected) {
+            if (i.next->setIsDirected)
                 i.next->print_dir();
-            }
-            else {
+            else
                 i.next->print();
-            }
-
-
         }
         if (not i.str_part.empty()) {
             if (elementIsEqual(i, main_container.back()))
@@ -111,19 +81,8 @@ void Set::print() {
             else
                 std::cout << "" << i.str_part << ", ";
         }
-        else if (i.char_part!=' ') {
-            if (elementIsEqual(i, main_container.back()))
-                std::cout << "" << i.char_part << "";
-            else
-                std::cout << "" << i.char_part << ", ";
-        }
-        else if (i.int_part!='0') {
-            if (elementIsEqual(i, main_container.back()))
-                std::cout << "" << i.int_part << "";
-            else
-                std::cout << "" << i.int_part << ", ";
-        }
     }
+
     std::cout << "}, ";
 }
 
