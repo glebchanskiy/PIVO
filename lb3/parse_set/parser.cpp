@@ -24,9 +24,11 @@ Parser::Parser(string &path) {
                 if (symbol == '=') {
                     flag = 'l'; // флаг для записи в поле "set_in_line"
                     continue;
-                } else if (flag == 'n') {
+                }
+                else if (flag == 'n') {
                     name += symbol;
-                } else if (flag == 'l') {
+                }
+                else if (flag == 'l') {
                     set_in_line += symbol;
                 }
             }

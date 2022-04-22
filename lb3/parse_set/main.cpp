@@ -11,9 +11,9 @@ int main() {
     clock_t oneTestTime;
     oneTestTime = clock();
 
-    Set a, b, a1, a2;
+    Set A, B, a, b, big1, big2, result;
 
-    a.pprint();
+    A.pprint();
 
     string path = "../test.txt";
     Parser pars(path);
@@ -24,33 +24,58 @@ int main() {
             i.pprint();
         }
 
-        a = pars.parsedSets[0];
-        b = pars.parsedSets[1];
+        A = pars.parsedSets[0];
+        B = pars.parsedSets[1];
 
-        a1 = pars.parsedSets[2];
-        a2 = pars.parsedSets[3];
+        a = pars.parsedSets[2];
+        b = pars.parsedSets[3];
 
+        big1 = pars.parsedSets[5];
+        big2 = pars.parsedSets[6];
 
 
         cout << endl << endl;
 
-        Set s1;
-        s1.difference(a,b);
-        s1.pprint();
+        Set A_diff_B;
+        A_diff_B.difference(A,B);
+        A_diff_B.pprint();
 
-        Set s2;
-        s2.difference(b,a);
-        s2.pprint();
+        Set B_diff_A;
+        B_diff_A.difference(B,A);
+        B_diff_A.pprint();
 
-        Set result;
-        result.unite(s1,s2);
+
+        result.unite(A_diff_B,B_diff_A);
+        result.pprint();
+
+        result.cross(A,B);
         result.pprint();
 
         cout << endl;
 
-        Set result2;
-        result2.difference(a1,a2);
-        result2.pprint();
+        result.difference(a,b);
+        result.pprint();
+
+        result.difference(b,a);
+        result.pprint();
+
+        result.unite(a,b);
+        result.pprint();
+
+        result.cross(a,b);
+        result.pprint();
+
+        cout << endl;
+
+        result.difference(big1,big2);
+        result.pprint();
+        result.difference(big2,big1);
+        result.pprint();
+        result.unite(big2,big1);
+        result.pprint();
+        result.cross(big2,big1);
+        result.pprint();
+
     }
 
 
@@ -59,24 +84,33 @@ int main() {
     Set j;
     j.setSetName("J");
 
-    Set j_;
+    Set j_inner;
+
     string i="I";
-    j_.push_back(i);
-    j_.push_back(*(new Set()));
+    j_inner.push_back(i);
+
+    j_inner.push_back(*(new Set()));
 
     string aa="A";
-    j_.push_back(aa);
-    j.push_back(j_);
+    j_inner.push_back(aa);
+
+    j.push_back(j_inner);
 
     j.pprint();
 
-    Set j2(j);
-    j2.setSetName("J2");
-    j2.pprint();
+    Set g(j);
+    g.setSetName("G");
+    g.pprint();
 
 
     Set temp;
-    temp.difference(j2,j);
+    temp.difference(j,g);
+    temp.pprint();
+
+    temp.cross(j,g);
+    temp.pprint();
+
+    temp.unite(j,g);
     temp.pprint();
 
 

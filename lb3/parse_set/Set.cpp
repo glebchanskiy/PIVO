@@ -148,7 +148,10 @@ bool Set::elementIsEqual(Set::SetElement &first_set,Set::SetElement &second_set)
          !second_set.str_part.empty()) ) {
         return true;
     }
-    else if ( first_set.next != nullptr and second_set.next != nullptr and (first_set.next->setIsDirected and second_set.next->setIsDirected)) {
+    else if ( first_set.next != nullptr and second_set.next != nullptr and
+            ((first_set.next->setIsDirected and second_set.next->setIsDirected) or
+            (!first_set.next->setIsDirected and !second_set.next->setIsDirected))
+    ) {
         return setIsEqual(*first_set.next, *second_set.next);
     }
     else
@@ -156,6 +159,7 @@ bool Set::elementIsEqual(Set::SetElement &first_set,Set::SetElement &second_set)
 }
 
 void Set::difference(Set &first_set, Set &second_set) {
+    this->clear();
     this->setSetName("(" + first_set.getSetName() + "\\" + second_set.getSetName() + ")");
     this->main_container.reserve(first_set.main_container.size() + second_set.main_container.size());
 
@@ -173,6 +177,7 @@ void Set::difference(Set &first_set, Set &second_set) {
 }
 
 void Set::unite(Set &first_set, Set &second_set) {
+    this->clear();
     this->setSetName("(" + first_set.getSetName() + "⋃" + second_set.getSetName() + ")");
     this->main_container.reserve(first_set.main_container.size() + second_set.main_container.size());
 
@@ -190,6 +195,7 @@ void Set::unite(Set &first_set, Set &second_set) {
 }
 
 void Set::cross(Set &first_set, Set &second_set) {
+    this->clear();
     this->setSetName("(" + first_set.getSetName() + "⋂" + second_set.getSetName() + ")");
     this->main_container.reserve(first_set.main_container.size() + second_set.main_container.size());
 
